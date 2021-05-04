@@ -1,5 +1,6 @@
 package com.salesianos.TusMayores.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collection;
 
-@NoArgsConstructor
+@NoArgsConstructor @AllArgsConstructor
 @Data
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
