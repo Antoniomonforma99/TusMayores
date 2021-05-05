@@ -15,7 +15,4 @@ public class VisitService extends BaseService<Visit, Long, VisitRepository> {
         super(repository);
     }
 
-    public List<Visit> userVisits(long id) {
-        return repository.userVisits(id);
-    }
 }

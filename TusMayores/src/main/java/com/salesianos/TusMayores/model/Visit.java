@@ -1,15 +1,13 @@
 package com.salesianos.TusMayores.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor @AllArgsConstructor
 @Data
@@ -31,4 +29,12 @@ public class Visit {
     private String observaciones;
 
     private boolean confirmada;
+
+    @ManyToOne
+    private Resident resident;
+
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @ManyToMany(mappedBy = "visitList", fetch = FetchType.EAGER)
+    private List<Familiar> familiarList = new ArrayList<>();
 }
