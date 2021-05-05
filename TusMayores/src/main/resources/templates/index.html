@@ -56,27 +56,34 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
+                            <ul class="navbar-nav mr-auto nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="reservation.html">HAZ UNA RESERVA</a>
+                                    <a class="nav-link" href="/reservation">HAZ UNA RESERVA</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="yourReservations.html">TUS RESERVAS</a>
+                                    <a class="nav-link" href="/yourReservations">TUS RESERVAS</a>
+
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="# nav-item" href="#">
+                                            <a class="nav-link" href="/yourReservationsInInterval">TUS RESERVAS POR TIEMPO</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="#" href="#">
-                                    <a class="nav-link" href="yourReservationsInInterval.html">TUS RESERVAS POR TIEMPO</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/userData">TUS CUENTA</a>
+
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="# nav-item" href="#">
+                                            <a class="nav-link" href="/userData">TUS DATOS</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="#" href="#">
-                                    <a class="nav-link" href="userData.html">TUS DATOS</a>
-                                </li>
-                                <li class="#" href="#">
+                                <li class="nav-item">
                                     <form th:action="@{/logout}" method="POST" id="logoutForm"></form>
-                                    <a class="nav-link" href="yourReservationsInInterval.html">
-                                        <a href="javascript:document.getElementById('logoutForm').submit()">SALIR</a>
-                                    </a>
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">SALIR</a>
                                 </li>
                             </ul>
                         </div>

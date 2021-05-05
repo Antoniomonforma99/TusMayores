@@ -210,18 +210,46 @@ a {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 60px;
-    padding-left: 0;
+    padding-right: 20px;
+    padding-left: 20;
+	padding-bottom: 10px;
     color: #fff;
     font-size: 16px;
     letter-spacing: 0.5px;
+	display: block;
 }
 
+/*CSS ANTONIO*/
+.nav li a{
+	padding-right: 20px;
+    padding-left: 20;
+	padding-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+	display: block;
+}
+
+.nav > li {
+	float: left;
+}
+
+.nav ul li a:hover {
+	background-color:#076787;
+}
+
+.nav li ul {
+	display: none;
+}
+
+
+/**/
 .navbar-nav.mr-auto {
     width: 100%;
     margin: 0;
     display: block;
 }
+
 
 .navbar-nav.mr-auto li {
     float: left;
@@ -238,6 +266,17 @@ a {
  .navbar-light .navbar-nav .nav-link:hover {
 		color: #23bbfb;
 }
+
+/*CSS ANTONIO*/
+.nav > li {
+	float:left;
+}
+
+.nav li ul {
+	display: none;
+	position: absolute;
+}
+/*CSS ANTONIO*/
 
 .bg-light {
     background-color: none;
