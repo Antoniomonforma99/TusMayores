@@ -1,7 +1,5 @@
 package com.salesianos.TusMayores.controllers;
 
-import com.salesianos.TusMayores.services.UserService;
-import com.salesianos.TusMayores.services.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -9,7 +7,9 @@ import org.springframework.stereotype.Controller;
 public class VisitController {
 
     @Autowired
-    VisitService visitService;
+    com.salesianos.TusMayores.services.visitService visitService;
     @Autowired
-    UserService userService;
+    com.salesianos.TusMayores.services.userService userService;
+
+
 }

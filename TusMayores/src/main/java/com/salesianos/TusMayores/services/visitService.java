@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class VisitService extends BaseService<Visit, Long, VisitRepository> {
+public class visitService extends BaseService<Visit, Long, VisitRepository> {
 
 
-    public VisitService(VisitRepository repository) {
+    public visitService(VisitRepository repository) {
         super(repository);
     }
 

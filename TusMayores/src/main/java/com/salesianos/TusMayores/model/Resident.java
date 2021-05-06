@@ -39,7 +39,15 @@ public class Resident {
     @OneToMany(mappedBy = "resident", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Familiar> familiarList = new ArrayList<>();
 
+    //Constructores
+    public Resident( String nombre, String apellidos, LocalDate fechaNac) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNac = fechaNac;
+        this.fechaEntradaResi = LocalDate.now();
+    }
 
+    //Helpers
     public void addFamiliar(Familiar f) {
         f.setResident(this);
         this.familiarList.add(f);

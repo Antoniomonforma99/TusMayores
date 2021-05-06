@@ -3,17 +3,15 @@ package com.salesianos.TusMayores.services;
 import com.salesianos.TusMayores.model.Resident;
 import com.salesianos.TusMayores.repositories.ResidentRepository;
 import com.salesianos.TusMayores.services.base.BaseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class ResidentService extends BaseService<Resident, Long, ResidentRepository> {
+@Service
+public class residentService extends BaseService<Resident, Long, ResidentRepository> {
 
-    public ResidentService(ResidentRepository repository) {
+    public residentService(ResidentRepository repository) {
         super(repository);
     }
 
-    @Override
-    public List<Resident> findAll() {
-        return this.repository.findAllJoin();
-    }
 }

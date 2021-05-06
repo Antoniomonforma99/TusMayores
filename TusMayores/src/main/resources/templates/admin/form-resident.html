@@ -94,17 +94,22 @@
       <div class="col-md-6">
         <div class="input_main">
           <div class="container">
-            <form method="POST" action="#" th:action="@{/login}">
-              <h1>Seleccione la fecha y hora de la reserva:</h1>
+            <form method="POST" action="#" th:action="@{/admin/resident/new/submit}" th:object="${resident}">
+              <h1>Introduzca el nombre del residente</h1>
               <div class="form-group">
-                <input type="datetime" id="fechaReserva" name="fechaReserva" required autofocus>
+                <input type="text" class="email-bt" th:field="*{nombre}" id="username" name="username" placeholder="Nombre" required autofocus>
               </div>
+              <h1>Introduzca los apellidos del residente</h1>
               <div class="form-group">
-                <input type="password" class="email-bt" id="password" name="password" placeholder="Password"required autofocus>
+                <input type="text" class="email-bt" th:field="*{apellidos}"id="surnames" name="surnames" placeholder="Apellidos" required autofocus>
+              </div>
+              <h1>Seleccione la fecha de nacimiento</h1>
+              <div class="form-group">
+                <input type="date" th:field="*{fechaNac}" name="fechaNac" id="fechaNac" required>
               </div>
               <div class="send_btn">
-                <input type="submit" name="enviar" value="Enviar" />
-              </div>
+                <input type="submit" name="registrar" value="Registrar" />
+            </div>
             </form>
           </div>
         </div>

@@ -88,26 +88,41 @@
   </div>
 </div>
 <div class="lets_touch_main">
-  <div class="container">
+  <div class="">
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="input_main">
-          <div class="container">
-            <form method="POST" action="#" th:action="@{/login}">
-              <h1>Seleccione la fecha y hora de la reserva:</h1>
-              <div class="form-group">
-                <input type="datetime" id="fechaReserva" name="fechaReserva" required autofocus>
-              </div>
-              <div class="form-group">
-                <input type="password" class="email-bt" id="password" name="password" placeholder="Password"required autofocus>
-              </div>
-              <div class="send_btn">
-                <input type="submit" name="enviar" value="Enviar" />
-              </div>
-            </form>
-          </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h4>Listado de residentes</h4>
+        <div class="col-md-12">
+            <table>
+                <thead>
+                    <tr>NOMBRE</tr>
+                    <tr>APELLIDOS</tr>
+                    <tr>FECHA NACIMIENTO</tr>
+                    <tr>FECHA DE ENTRADA</tr>
+                    <tr>FECHA SALIDA</tr>
+                    <tr>CAUSA SALIDA</tr>
+                    <tr>ACCIONES</tr>
+                </thead>
+                <tbody>
+                    <tr th:each="resident : ${residentList}">
+
+                        <td th:text = ${resident.nombre}>NOMBRE</td>
+                        <td th:text = ${resident.apellidos}>APELLIDOS</td>
+                        <td th:text="${#temporals.format(resident.fechaNac, 'dd/MM/yyyy')}">
+                          FECHA DE NACIMIENTO </td>
+                        <td th:text="${#temporals.format(resident.fechaEntradaResi, 'dd/MM/yyyy')}">
+                          FECHA DE ENTRADA </td>                        
+                        <td th:text="${#temporals.format(resident.fechaSalida, 'dd/MM/yyyy')}">
+                          FECHA DE SALIDA </td>
+                        <td th:text = ${resident.causaSalida}>CAUSA SALIDA</td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
       </div>
     </div>
   </div>

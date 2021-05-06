@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
   <!-- Responsive-->
   <link rel="stylesheet" th:href="@{/css/responsive.css}">
+
+  <link rel="stylesheet" type="text/css" th:href="@{/css/miCss.css}">
   <!-- fevicon -->
   <link rel="icon" th:href="@{/images/fevicon.png}" type="image/gif" />
   <!-- Scrollbar Custom CSS -->
@@ -87,28 +89,45 @@
     </div>
   </div>
 </div>
-<div class="lets_touch_main">
+
+<div class="">
   <div class="container">
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="input_main">
-          <div class="container">
-            <form method="POST" action="#" th:action="@{/login}">
-              <h1>Seleccione la fecha y hora de la reserva:</h1>
-              <div class="form-group">
-                <input type="datetime" id="fechaReserva" name="fechaReserva" required autofocus>
-              </div>
-              <div class="form-group">
-                <input type="password" class="email-bt" id="password" name="password" placeholder="Password"required autofocus>
-              </div>
-              <div class="send_btn">
-                <input type="submit" name="enviar" value="Enviar" />
-              </div>
-            </form>
-          </div>
+      <br>
+      <br>
+      <h1>Listado de residentes</h4>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="tabla">
+                <thead class="cabecera">
+                  <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDOS</th>
+                    <th>FECHA NACIMIENTO</th>
+                    <th>FECHA DE ENTRADA</th>
+                    <th>FECHA SALIDA</th>
+                    <th>CAUSA SALIDA</th>
+                    <th>ACCIONES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="resident : ${residentList}">
+                        <td class="thTd" th:text = ${resident.nombre}>NOMBRE</td>
+                        <td class="thTd" th:text = ${resident.apellidos}>APELLIDOS</td>
+                        <td class="thTd" th:text="${#temporals.format(resident.fechaNac, 'dd/MM/yyyy')}">
+                          FECHA DE NACIMIENTO </td>
+                        <td class="thTd" th:text="${#temporals.format(resident.fechaEntradaResi, 'dd/MM/yyyy')}">
+                          FECHA DE ENTRADA </td>
+                        <td class="thTd" th:text="${#temporals.format(resident.fechaSalida, 'dd/MM/yyyy')}">
+                          FECHA DE SALIDA </td>
+                        <td class="thTd" th:text = ${resident.causaSalida}>CAUSA SALIDA</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
+
+      
     </div>
   </div>
 </div>

@@ -1,0 +1,20 @@
+
+.tabla{
+    width: 100%;
+    color: black;
+    text-align: left;
+    padding: 20px;
+}
+
+.thTd{
+    padding: 17px;
+    border-collapse: collapse;
+}
+
+.cabecera{
+    background-color: rgb(87, 87, 87);
+    color: white;
+    border-bottom: solid 5px #0F362D;
+    padding: 20px;
+    font-weight: lighter;
+}

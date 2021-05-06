@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ResidentRepository extends JpaRepository<Resident, Long> {
 
-    @Query("select distinct r from Resident r join fetch r.familiarList")
-    List<Resident> findAllJoin();
+    /*@Query("select distinct r from Resident r join fetch r.familiarList")
+    List<Resident> findAllJoin();*/
 }

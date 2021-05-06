@@ -1,4 +1,7 @@
 package com.salesianos.TusMayores.repositories;
 
-public interface FamiliarRepository {
+import com.salesianos.TusMayores.model.Familiar;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface FamiliarRepository extends JpaRepository<Familiar, Long> {
 }

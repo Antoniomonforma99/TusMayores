@@ -9,9 +9,9 @@ import java.util.Optional;
 
 
 @Service
-public class UserService extends BaseService<User, Long, UserRepository> {
+public class userService extends BaseService<User, Long, UserRepository> {
 
-    public UserService(UserRepository repo) {
+    public userService(UserRepository repo) {
         super(repo);
     }
 
