@@ -18,3 +18,42 @@
     padding: 20px;
     font-weight: lighter;
 }
+
+#header{
+    margin: auto;
+    width: 1000px;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+.nav > li {
+    float: left;
+}
+
+.nav li a {
+    background-color: #072833;
+}
+
+.nav li a:hover {
+    background-color: rgb(50, 135, 138);
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: none;
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+nav {
+    overflow: hidden;
+    transition: 1s all;
+}
+.mostrar{
+    max-height: 500px;
+}

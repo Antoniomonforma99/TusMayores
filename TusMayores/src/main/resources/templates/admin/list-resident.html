@@ -121,7 +121,10 @@
                         <td class="thTd" th:text="${#temporals.format(resident.fechaSalida, 'dd/MM/yyyy')}">
                           FECHA DE SALIDA </td>
                         <td class="thTd" th:text = ${resident.causaSalida}>CAUSA SALIDA</td>
-                        <td></td>
+                        <td>
+                          <a class="btn btn-primary" th:href="@{/admin/resident/edit/{id}(id=${resident.id})}">EDITAR</a>
+                          <a class="btn btn-primary" th:href="@{/admin/resident/delete/{id}(id=${resident.id})}">ELIMINAR</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

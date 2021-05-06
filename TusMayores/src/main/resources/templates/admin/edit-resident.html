@@ -129,21 +129,46 @@
 <!--banner start -->
 <div class="lets_touch_main">
     <div class="container">
-        <div id="main_slider" class="carousel slide" data-ride="carousel">
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="titlepage-h1">
-                        <h1 class="bnner_title">Bienvenido<br>
-                            <span style="color: #10b5fa"><span sec:authentication="name">Usuario</span></span>
-                        </h1>
-                        <p class="long_text">En nuestra residencia cuidamos a tus mayores como si lo hicieras tu mismo</p>
-                    </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="input_main">
+            <div class="container">
+              <form method="POST" action="#" th:action="@{/admin/resident/}" th:object="${resident}">
+                <h1>Nombre del residente</h1>
+                <div class="form-group">
+                  <input type="text" class="email-bt" th:field="*{nombre}" id="username" name="username" placeholder="Nombre" autofocus>
                 </div>
+                <h1>Apellidos del residente</h1>
+                <div class="form-group">
+                  <input type="text" class="email-bt" th:field="*{apellidos}"id="surnames" name="surnames" placeholder="Apellidos" autofocus>
+                </div>
+                <h1>Fecha de nacimiento</h1>
+                <div class="form-group">
+                  <input type="date"  th:field="*{fechaNac}" name="fechaNac" id="fechaNac" autofocus>
+                </div>
+                <h1>Fecha de entrada</h1>
+                <div class="form-group">
+                    <input type="date" th:field="*{fechaEntradaResi}" name="fechaEntradaResi" id="fechaEntradaResi" autofocus>
+                </div>
+                <h1>Fecha de salida</h1>
+                <div class="form-group">
+                    <input type="date" th:field="*{fechaSalida}" name="fechaSalida" id="fechaSalida" autofocus>
+                </div>
+                <h1>Causa de salida</h1>
+                <div class="form-group">
+                    <input type="text"  th:field="*{causaSalida}" name="causaSalida" id="causaSalida" autofocus>
+                </div>
+                <div class="send_btn">
+                  <input type="submit" name="editar" value="Editar" />
+              </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 <!-- Javascript files-->
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>

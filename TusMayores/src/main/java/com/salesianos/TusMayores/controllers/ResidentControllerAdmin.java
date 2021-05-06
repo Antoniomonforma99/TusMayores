@@ -16,17 +16,29 @@ public class ResidentControllerAdmin {
 
     //listado
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index(Model model) {
         model.addAttribute("residentList", residentService.findAll());
         return "admin/list-resident";
+    }
+
+    //editar un residente
+    @GetMapping("/edit/{id}")
+    public String editResident(@PathVariable long id, Model model) {
+        Resident resident = residentService.findById(id);
+        if (resident != null) {
+            model.addAttribute("resident-form", resident);
+            return "/admin/edit-resident";
+        }else{
+            return "redirect:/admin/form-resident/";
+        }
     }
 
     //borrado
     @GetMapping("/delete/{id}")
     public String removeResident(@PathVariable("id") long id) {
         residentService.deleteById(id);
-        return "redirect:/admin/resident";
+        return "redirect:/admin/resident/";
     }
 
     //Nuevo residente

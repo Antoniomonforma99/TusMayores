@@ -40,11 +40,11 @@ public class Resident {
     private List<Familiar> familiarList = new ArrayList<>();
 
     //Constructores
-    public Resident( String nombre, String apellidos, LocalDate fechaNac) {
+    public Resident( String nombre, String apellidos, LocalDate fechaNac, LocalDate fechaEntradaResi) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNac = fechaNac;
-        this.fechaEntradaResi = LocalDate.now();
+        this.fechaEntradaResi = fechaEntradaResi;
     }
 
     //Helpers
